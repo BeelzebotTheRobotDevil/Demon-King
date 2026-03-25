@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b1t0fafw5n7pj"]
+
+[ext_resource type="Texture2D" uid="uid://dilnp5w63t8dk" path="res://Assets/Sprites/UI Textures/MainMenu Textures/TitleScreen.png" id="1_c0ewc"]
+
+[node name="SceneTransitionScreen" type="CanvasLayer" unique_id=1114197783]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1992561498]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_c0ewc")

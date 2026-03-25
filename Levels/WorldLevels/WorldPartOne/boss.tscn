@@ -1,10 +1,10 @@
 [gd_scene format=4 uid="uid://blp5w68sqjq8x"]
 
-[ext_resource type="Texture2D" uid="uid://0mgyl0u4tjmw" path="res://assets/Demon King Tiles/Grass Tiles_sprite_1.png" id="1_o1i15"]
-[ext_resource type="Texture2D" uid="uid://b47nygo24rw5n" path="res://assets/Demon King Tiles/Interior Design_sprite_1.png" id="2_we8h1"]
-[ext_resource type="Texture2D" uid="uid://4crtl3802ai2" path="res://assets/Demon King Tiles/Moss Stone Design_sprite_1.png" id="3_kvofc"]
-[ext_resource type="Texture2D" uid="uid://u3wpqt2uaflj" path="res://assets/Demon King Tiles/Moss Stone Tiles_sprite_1.png" id="4_ef0k6"]
-[ext_resource type="Texture2D" uid="uid://doagerso5qgr0" path="res://assets/Demon King Tiles/Stone Tiles_sprite_1.png" id="5_ry61v"]
+[ext_resource type="Texture2D" uid="uid://2xx2yqq0qs4g" path="res://Assets/Sprites/Stone Tiles/Grass Tiles_sprite_1.png" id="1_o1i15"]
+[ext_resource type="Texture2D" uid="uid://dbjvlmfex8i77" path="res://Assets/Sprites/Background/Interior Design_sprite_1.png" id="2_we8h1"]
+[ext_resource type="Texture2D" uid="uid://c1rr5liu2q4uh" path="res://Assets/Sprites/Stone Tiles/Moss Stone Design_sprite_1.png" id="3_kvofc"]
+[ext_resource type="Texture2D" uid="uid://ccia1xx1gjg3o" path="res://Assets/Sprites/Stone Tiles/Moss Stone Tiles_sprite_1.png" id="4_ef0k6"]
+[ext_resource type="Texture2D" uid="uid://cy0xcjnreqwq6" path="res://Assets/Sprites/Stone Tiles/Stone Tiles_sprite_1.png" id="5_ry61v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kles1"]
 texture = ExtResource("1_o1i15")
