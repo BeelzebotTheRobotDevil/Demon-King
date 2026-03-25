@@ -65,8 +65,11 @@ _data = {
 &"take_damage": SubResource("Animation_de3q4")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfgo4"]
-size = Vector2(24, 24)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_slh26"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_juw87"]
+size = Vector2(38, 35)
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1806429603]
 script = ExtResource("1_slh26")
@@ -81,4 +84,14 @@ frame = 1
 libraries/ = SubResource("AnimationLibrary_ine4y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1461339223]
-shape = SubResource("RectangleShape2D_dfgo4")
+shape = SubResource("RectangleShape2D_slh26")
+debug_color = Color(0.12784183, 0.5474662, 0.91209656, 0.41960785)
+
+[node name="HurtBox" type="Area2D" parent="." unique_id=1550740437]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=925235026]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_juw87")
+debug_color = Color(0.87750626, 0.0004033357, 0.8314447, 0.41960785)

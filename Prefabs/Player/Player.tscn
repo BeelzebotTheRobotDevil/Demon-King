@@ -171,9 +171,10 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kyxg0"]
 size = Vector2(61, 60)
 
-[node name="player" type="CharacterBody2D" unique_id=1911782033 groups=["Player"]]
+[node name="Player" type="CharacterBody2D" unique_id=1911782033 groups=["Player"]]
 position = Vector2(970, 543)
 disable_mode = 1
+collision_layer = 2
 script = ExtResource("1_hnr8y")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1405287108]
@@ -198,12 +199,6 @@ libraries/ = SubResource("AnimationLibrary_tl25y")
 [node name="PlayerBox" type="CollisionShape2D" parent="." unique_id=1471135260]
 position = Vector2(-0.5, -1)
 shape = SubResource("RectangleShape2D_kyxg0")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=79768226]
-position_smoothing_enabled = true
-position_smoothing_speed = 16.0
-rotation_smoothing_enabled = true
-rotation_smoothing_speed = 16.0
 
 [node name="WalkingSound" type="AudioStreamPlayer2D" parent="." unique_id=1732112346]
 stream = ExtResource("3_nwrxt")

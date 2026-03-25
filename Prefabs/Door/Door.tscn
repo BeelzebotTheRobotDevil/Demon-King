@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://n7shimqted5n"]
+
+[ext_resource type="Script" uid="uid://c0cckieshuysq" path="res://Prefabs/Door/door.gd" id="1_so7vb"]
+[ext_resource type="Texture2D" uid="uid://b7uqvorq53nch" path="res://Assets/Sprites/Doors/Door.png" id="2_apsi0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3jst"]
+size = Vector2(128, 128.5)
+
+[node name="Door" type="Node2D" unique_id=1928927812]
+process_priority = 2
+script = ExtResource("1_so7vb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2060259724]
+texture_filter = 1
+position = Vector2(65, -64)
+scale = Vector2(2, 2)
+texture = ExtResource("2_apsi0")
+
+[node name="ExitArea2D" type="Area2D" parent="." unique_id=1860775842]
+collision_layer = 32
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitArea2D" unique_id=938031101]
+position = Vector2(65, -63.75)
+shape = SubResource("RectangleShape2D_a3jst")
+debug_color = Color(0.7853246, 0.43297872, 0.03569704, 0.41960785)
+
+[connection signal="body_entered" from="ExitArea2D" to="." method="_on_exit_area_2d_body_entered"]

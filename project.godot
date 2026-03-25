@@ -23,6 +23,7 @@ boot_splash/minimum_display_time=15
 [autoload]
 
 LevelTransition="*uid://des0bumljo0k4"
+SceneManager="*uid://dfjdf4jsnnvnl"
 
 [display]
 
@@ -93,8 +94,11 @@ attack={
 
 2d_render/layer_1="World"
 2d_render/layer_2="Player"
-2d_physics/layer_1="TheWorld"
-2d_physics/layer_2="Interactables"
+2d_physics/layer_1="GROUND"
+2d_physics/layer_2="PLAYER"
+2d_physics/layer_3="ENEMY"
+2d_physics/layer_4="PICKUP"
+2d_physics/layer_6="DOORS"
 
 [physics]
 
