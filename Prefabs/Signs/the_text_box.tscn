@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://c8omwr36trae3"]
+
+[ext_resource type="Script" uid="uid://chvirjupgnnk2" path="res://Assets/Code/TheTextBox.cs" id="1_yw5pq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nbome"]
+bg_color = Color(0.60877234, 0.59604317, 0.6033632, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.16862746, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yw5pq"]
+
+[node name="TheTextBox" type="CanvasLayer" unique_id=1408890846 node_paths=PackedStringArray("textBoxContainer", "textBoxLabel")]
+script = ExtResource("1_yw5pq")
+textBoxContainer = NodePath("TextBoxContainer")
+textBoxLabel = NodePath("TextBoxContainer/MarginContainer/HBoxContainer/BoxText")
+textSpeedRead = 0.2
+
+[node name="TextBoxContainer" type="MarginContainer" parent="." unique_id=422186338]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -119.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Panel" type="Panel" parent="TextBoxContainer" unique_id=1066179521]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nbome")
+metadata/_edit_group_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="TextBoxContainer" unique_id=540302534]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Panel" type="Panel" parent="TextBoxContainer/MarginContainer" unique_id=1284376906]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yw5pq")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextBoxContainer/MarginContainer" unique_id=1770651656]
+layout_mode = 2
+
+[node name="BoxText" type="Label" parent="TextBoxContainer/MarginContainer/HBoxContainer" unique_id=1466381301]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+autowrap_mode = 2
+clip_text = true

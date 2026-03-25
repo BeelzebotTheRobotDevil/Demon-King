@@ -1,0 +1,221 @@
+[gd_scene format=3 uid="uid://corbclgg0s63"]
+
+[ext_resource type="Script" uid="uid://dfdnabwou5b6r" path="res://Assets/Code/Player/PlayMovement2.cs" id="1_hnr8y"]
+[ext_resource type="Texture2D" uid="uid://cnku6vf8f8x1m" path="res://Assets/Sprites/PlaceHolder.png" id="2_vcdpd"]
+[ext_resource type="AudioStream" uid="uid://cegtxatwaekad" path="res://Assets/Sounds/Demonking walk.mp3" id="3_nwrxt"]
+[ext_resource type="Texture2D" uid="uid://dc6agg1q21il6" path="res://Assets/Sprites/Player/BlackSword.png" id="4_nwrxt"]
+[ext_resource type="PackedScene" uid="uid://dbww8r0jj2d5r" path="res://Prefabs/HealthBar/HealthBar.tscn" id="5_nwrxt"]
+
+[sub_resource type="Animation" id="Animation_5virf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.5707964]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_ip1bf"]
+resource_name = "slash"
+length = 0.3
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(0.5, -2),
+"update": 0,
+"values": [-1.5707964, 1.5707964]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(1.6, 1.8)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.05),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"spawn_splash"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_4rw4d"]
+resource_name = "sword_return"
+length = 0.65
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.65),
+"transitions": PackedFloat32Array(-2, -2, 0.5),
+"update": 0,
+"values": [1.5707964, 1.5707964, -1.5707964]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.65),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(1.6, 1.9), Vector2(2, 2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ae6jo"]
+_data = {
+&"RESET": SubResource("Animation_5virf"),
+&"slash": SubResource("Animation_ip1bf"),
+&"sword_return": SubResource("Animation_4rw4d")
+}
+
+[sub_resource type="Animation" id="Animation_xo5gc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_rcqut"]
+resource_name = "look_left"
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(0.5, 2),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(-1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2lcig"]
+resource_name = "look_right"
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(0.5, 2),
+"update": 0,
+"values": [Vector2(-1, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tl25y"]
+_data = {
+&"RESET": SubResource("Animation_xo5gc"),
+&"look_left": SubResource("Animation_rcqut"),
+&"look_right": SubResource("Animation_2lcig")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kyxg0"]
+size = Vector2(61, 60)
+
+[node name="player" type="CharacterBody2D" unique_id=1911782033 groups=["Player"]]
+position = Vector2(970, 543)
+disable_mode = 1
+script = ExtResource("1_hnr8y")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1405287108]
+texture = ExtResource("2_vcdpd")
+
+[node name="sword" type="Sprite2D" parent="Sprite2D" unique_id=611388458]
+z_index = 1
+texture_filter = 1
+position = Vector2(0, 4)
+rotation = -1.5707964
+scale = Vector2(2, 2)
+texture = ExtResource("4_nwrxt")
+offset = Vector2(16, -16)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D/sword" unique_id=1655659036]
+libraries/ = SubResource("AnimationLibrary_ae6jo")
+
+[node name="flip_anim" type="AnimationPlayer" parent="Sprite2D" unique_id=713495374]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_tl25y")
+
+[node name="PlayerBox" type="CollisionShape2D" parent="." unique_id=1471135260]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_kyxg0")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=79768226]
+position_smoothing_enabled = true
+position_smoothing_speed = 16.0
+rotation_smoothing_enabled = true
+rotation_smoothing_speed = 16.0
+
+[node name="WalkingSound" type="AudioStreamPlayer2D" parent="." unique_id=1732112346]
+stream = ExtResource("3_nwrxt")
+volume_db = 1.5
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1491965147]
+
+[node name="HealthBar" parent="CanvasLayer" unique_id=1236745846 instance=ExtResource("5_nwrxt")]
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 275.0
+offset_bottom = 45.0
+size_flags_horizontal = 0
+
+[connection signal="animation_finished" from="Sprite2D/sword/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

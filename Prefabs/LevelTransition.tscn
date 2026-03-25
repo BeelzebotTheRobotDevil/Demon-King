@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://des0bumljo0k4"]
+
+[ext_resource type="Script" uid="uid://c6umxcnnpwi7c" path="res://Assets/Code/Menus/LevelScript.gd" id="1_idrev"]
+
+[node name="LevelTransition" type="CanvasLayer" unique_id=2130807256]
+process_mode = 3
+script = ExtResource("1_idrev")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1223326457]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
